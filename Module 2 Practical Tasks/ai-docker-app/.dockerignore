@@ -1,0 +1,57 @@
+# .dockerignore
+
+# Version control
+.git
+.gitignore
+
+# Python artifacts
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Environment files (secrets)
+.env
+.env.local
+.env.production
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker files
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Large data files (mount as volumes instead)
+*.csv
+*.parquet
+data/
+models/
+*.bin
+*.gguf
+*.safetensors
+
+# Documentation
+docs/
+*.md
+LICENSE
+
+# OS files
+.DS_Store
+Thumbs.db
