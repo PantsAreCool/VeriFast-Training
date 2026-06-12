@@ -1,0 +1,51 @@
+Task 3: Research a Generative AI Application
+
+Choose one GenAI application area (text, image, video, or audio).
+Research two competing models/products in that space (e.g., GPT-4o vs Claude for text, or DALL-E vs Midjourney for images).
+Write a comparison table covering: model architecture type, training data size (if known), key strengths, key limitations, pricing/accessibility, 
+and a use case where one would be preferred over the other.
+
+GPT-4o vs. Claude 3.5 Sonnet
+
+GPT-4o:
+
+Model Architecture Type: Native Multimodal Transformer (processes text, vision, and audio natively within a single end-to-end network).
+
+Training Data Size: Unknown, but extensive
+
+Key Strengths:
+- Speed: very fast, efficient generation
+- Multilingual
+
+Key Limitations:
+- Overly generic
+- prone to 'personality drift'
+
+Pricing & Accessibility:
+- free tier with strict message limits
+- Plus: $20/month
+- API: $2.50 per 1M input tokens, $10.00 per 1M output tokens
+
+Preferred Use Case: General use, basic functionality, everyday questions
+
+
+
+Claude 3.5 Sonnet:
+
+Model Architecture Type: Multimodal Transformer (highly optimized for text, code, and vision reasoning).
+
+Training Data Size: Unknown, but extensive
+
+Key Strengths:
+- Advanced Reasoning: displays complex level thinking and comprehension
+- Very proficienct in coding
+
+Key Limitations:
+- can't natively browse internet in its default chat UI
+
+Pricing & Accessibility:
+- Free tier with strict message limits
+- Pro: $20/month
+- API: $3.00 per 1M input tokens, $15.00 per 1M output tokens
+
+Preferred Use Case: Software Engineering Aid/Heavy Code Workflows
