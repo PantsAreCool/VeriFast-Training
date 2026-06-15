@@ -1,0 +1,32 @@
+# Task 3: Compare BERT vs GPT Architectures
+Research the specific architectural differences between BERT-base (encoder-only) and GPT-2 small (decoder-only).
+Create a comparison table covering: number of layers, hidden dimension, number of attention heads, total parameters, 
+training objective (masked language modeling vs next token prediction), attention type (bidirectional vs causal), and the attention mask used. 
+Write a paragraph explaining which architecture is better suited for sentiment analysis and which for story generation, and why.
+
+BERT-base (Encoder-Only):
+  - Number of Layers: 12
+  - Hidden Dimension (d_model): 768
+  - Number of Attention Heads: 12
+  - Total Parameters: 110 Million
+  - Training Objective: Masked Language Modeling (Fill-in-the-blank)
+  - Attention Type: Bidirectional (Looks left and right at the same time)
+  - Attention Mask Used: Padding Mask (Only hides empty padding spaces)
+
+* GPT-2 small (Decoder-Only):
+  - Number of Layers: 12
+  - Hidden Dimension (d_model): 768
+  - Number of Attention Heads: 12
+  - Total Parameters: 117 Million
+  - Training Objective: Next Token Prediction (Predicts the very next word)
+  - Attention Type: Causal (Looks only at past words)
+  - Attention Mask Used: Causal Triangular Mask (Hides all future words)
+
+BERT is much better suited for sentiment analysis. When evaluating whether a review is positive or negative, 
+the model needs to understand the entire context of a sentence at once. 
+Since BERT uses bidirectional attention, it can read a word while looking at both the words before it and after it simultaneously.
+
+GPT-2 is much better suited for story generation. Writing a story requires predicting one word at a time in a natural, forward-flowing sequence.
+GPT-2 uses causal attention, it is strictly trained to look only at past words to guess what comes next.
+This prevents the model from accidentally "peeking ahead" into the future during training, making it effective at generating paragraphs of text 
+from a creative prompt.
