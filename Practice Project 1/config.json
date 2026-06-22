@@ -1,0 +1,8 @@
+{
+	"wor_dir": "sample_logs",
+	"logs": [
+		"api_gateway.log",
+		"app_server.log",
+		"database.log"
+	]
+}

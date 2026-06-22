@@ -1,0 +1,193 @@
+{
+  "filename": "app_server.log",
+  "parsed_at": "2026-06-22T17:19:58.238715",
+  "statistics": {
+    "total_lines": 33,
+    "info_count": 15,
+    "warn_count": 7,
+    "error_count": 11
+  },
+  "errors": [
+    {
+      "timestamp": "2026-05-20 08:06:33",
+      "message": "Failed to process payment: ConnectionError to payment gateway (stripe), retry attempt 1/3",
+      "details": {
+        "raw": "Failed to process payment: ConnectionError to payment gateway (stripe), retry attempt 1/3"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:06:35",
+      "message": "Failed to process payment: ConnectionError to payment gateway (stripe), retry attempt 2/3",
+      "details": {
+        "raw": "Failed to process payment: ConnectionError to payment gateway (stripe), retry attempt 2/3"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:15:00",
+      "message": "NullPointerException in OrderService.processOrder() at line 142",
+      "details": {
+        "raw": "NullPointerException in OrderService.processOrder() at line 142",
+        "error_code": "142"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:15:01",
+      "message": "NullPointerException in OrderService.processOrder() at line 142",
+      "details": {
+        "raw": "NullPointerException in OrderService.processOrder() at line 142",
+        "error_code": "142"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:15:02",
+      "message": "NullPointerException in OrderService.processOrder() at line 142",
+      "details": {
+        "raw": "NullPointerException in OrderService.processOrder() at line 142",
+        "error_code": "142"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:20:45",
+      "message": "Authentication failed for user_id=1005: invalid token",
+      "details": {
+        "raw": "Authentication failed for user_id=1005: invalid token",
+        "entity_id": "1005"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:28:19",
+      "message": "NullPointerException in OrderService.processOrder() at line 142",
+      "details": {
+        "raw": "NullPointerException in OrderService.processOrder() at line 142",
+        "error_code": "142"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:33:45",
+      "message": "TimeoutError: Request to inventory service timed out after 30s",
+      "details": {
+        "raw": "TimeoutError: Request to inventory service timed out after 30s",
+        "exception_type": "TimeoutError"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:37:00",
+      "message": "Database connection pool exhausted: max_connections=50, active=50, waiting=12",
+      "details": {
+        "raw": "Database connection pool exhausted: max_connections=50, active=50, waiting=12"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:40:22",
+      "message": "Failed to send email notification: SMTPConnectionError to smtp.gmail.com",
+      "details": {
+        "raw": "Failed to send email notification: SMTPConnectionError to smtp.gmail.com"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:48:30",
+      "message": "NullPointerException in OrderService.processOrder() at line 142",
+      "details": {
+        "raw": "NullPointerException in OrderService.processOrder() at line 142",
+        "error_code": "142"
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "timestamp": "2026-05-20 08:03:10",
+      "message": "High memory usage detected: 85% (threshold: 80%)"
+    },
+    {
+      "timestamp": "2026-05-20 08:12:44",
+      "message": "Slow query detected: SELECT * FROM orders WHERE status='pending', duration=2500ms"
+    },
+    {
+      "timestamp": "2026-05-20 08:25:33",
+      "message": "Disk space low: /var/log at 92% capacity"
+    },
+    {
+      "timestamp": "2026-05-20 08:33:46",
+      "message": "Circuit breaker OPEN for inventory-service"
+    },
+    {
+      "timestamp": "2026-05-20 08:37:05",
+      "message": "Retry queue growing: 12 requests waiting for database connection"
+    },
+    {
+      "timestamp": "2026-05-20 08:45:00",
+      "message": "High memory usage detected: 82% (threshold: 80%)"
+    },
+    {
+      "timestamp": "2026-05-20 08:58:00",
+      "message": "SSL certificate expiring in 7 days for api.example.com"
+    }
+  ],
+  "info": [
+    {
+      "timestamp": "2026-05-20 08:01:12",
+      "message": "Server started on port 8080"
+    },
+    {
+      "timestamp": "2026-05-20 08:01:13",
+      "message": "Connected to database successfully"
+    },
+    {
+      "timestamp": "2026-05-20 08:02:45",
+      "message": "User login: user_id=1001, ip=192.168.1.50"
+    },
+    {
+      "timestamp": "2026-05-20 08:05:22",
+      "message": "API request: GET /api/v1/users, status=200, latency=45ms"
+    },
+    {
+      "timestamp": "2026-05-20 08:06:37",
+      "message": "Payment processed successfully after retry: order_id=ORD-5501"
+    },
+    {
+      "timestamp": "2026-05-20 08:10:15",
+      "message": "API request: POST /api/v1/orders, status=201, latency=120ms"
+    },
+    {
+      "timestamp": "2026-05-20 08:17:30",
+      "message": "Cache cleared: 1500 entries removed"
+    },
+    {
+      "timestamp": "2026-05-20 08:22:10",
+      "message": "Scheduled job completed: daily_report, duration=340s"
+    },
+    {
+      "timestamp": "2026-05-20 08:30:00",
+      "message": "Health check passed"
+    },
+    {
+      "timestamp": "2026-05-20 08:35:12",
+      "message": "API request: GET /api/v1/products, status=200, latency=32ms"
+    },
+    {
+      "timestamp": "2026-05-20 08:38:00",
+      "message": "Database connection pool recovered: active=15, waiting=0"
+    },
+    {
+      "timestamp": "2026-05-20 08:42:15",
+      "message": "User logout: user_id=1001"
+    },
+    {
+      "timestamp": "2026-05-20 08:50:00",
+      "message": "Health check passed"
+    },
+    {
+      "timestamp": "2026-05-20 08:55:00",
+      "message": "Server stats: requests=12450, errors=127, avg_latency=85ms"
+    },
+    {
+      "timestamp": "2026-05-20 09:00:00",
+      "message": "Server stats: requests=13200, errors=131, avg_latency=88ms"
+    }
+  ],
+  "error_summary": {
+    "Unknown Error": 5,
+    "142": 5,
+    "TimeoutError": 1
+  }
+}

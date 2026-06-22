@@ -1,0 +1,33 @@
+2026-05-20 08:00:00 [INFO] PostgreSQL 16.2 started, database=production_db
+2026-05-20 08:00:01 [INFO] Connection pool initialized: min=10, max=50
+2026-05-20 08:01:00 [INFO] Active connections: 12, idle: 8, waiting: 0
+2026-05-20 08:02:30 [INFO] Query executed: SELECT * FROM users WHERE id=1001, duration=5ms
+2026-05-20 08:03:00 [WARN] Slow query: UPDATE orders SET status='processing' WHERE id IN (...), duration=1200ms
+2026-05-20 08:05:00 [INFO] Transaction completed: INSERT orders (id=5501), COMMIT
+2026-05-20 08:07:00 [WARN] Connection pool: active=35, idle=5, waiting=8
+2026-05-20 08:08:30 [ERROR] Deadlock detected: transaction_4521 and transaction_4522 competing for orders table
+2026-05-20 08:08:31 [INFO] Deadlock resolved: transaction_4522 retried successfully
+2026-05-20 08:10:00 [INFO] Vacuum started on orders table
+2026-05-20 08:12:00 [WARN] Table bloat detected: orders table is 45% bloat, recommend VACUUM FULL
+2026-05-20 08:15:00 [ERROR] Replication lag: standby-1 is 45 seconds behind primary
+2026-05-20 08:15:30 [WARN] Replication lag: standby-1 is 30 seconds behind primary (recovering)
+2026-05-20 08:16:00 [INFO] Replication lag resolved: standby-1 caught up
+2026-05-20 08:18:00 [ERROR] Constraint violation: UNIQUE constraint failed on users.email for value='admin@example.com'
+2026-05-20 08:20:00 [INFO] Index scan: idx_orders_status, tuples=15000, duration=8ms
+2026-05-20 08:22:00 [WARN] Sequential scan on products table: 500000 rows scanned, consider adding index
+2026-05-20 08:25:00 [ERROR] Connection refused: max_connections reached (50/50), new connections being rejected
+2026-05-20 08:25:05 [ERROR] Connection refused: max_connections reached (50/50), new connections being rejected
+2026-05-20 08:25:10 [ERROR] Connection refused: max_connections reached (50/50), new connections being rejected
+2026-05-20 08:26:00 [INFO] Connection pool recovered: active=20, idle=15, waiting=0
+2026-05-20 08:28:00 [INFO] Backup started: pg_dump production_db
+2026-05-20 08:32:00 [INFO] Backup completed: 2.3GB in 240s, stored at /backups/prod_20260520.dump
+2026-05-20 08:35:00 [WARN] WAL archive lag: 15 WAL files pending archival
+2026-05-20 08:37:00 [ERROR] Foreign key violation: INSERT order_items (order_id=9999) references non-existent orders.id
+2026-05-20 08:40:00 [INFO] Statistics gathered for query planner
+2026-05-20 08:42:00 [WARN] Disk usage: /var/lib/postgresql at 78% (threshold: 80%)
+2026-05-20 08:45:00 [INFO] Auto-vacuum completed on sessions table: 5000 dead tuples removed
+2026-05-20 08:48:00 [ERROR] Replication lag: standby-2 is 120 seconds behind primary
+2026-05-20 08:50:00 [WARN] Replication lag: standby-2 is 60 seconds behind primary (recovering)
+2026-05-20 08:52:00 [INFO] Replication lag resolved: standby-2 caught up
+2026-05-20 08:55:00 [INFO] Database stats: queries=45600, slow_queries=12, errors=8
+2026-05-20 09:00:00 [INFO] Checkpoint completed: 234 buffers written
