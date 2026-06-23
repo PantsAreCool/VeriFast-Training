@@ -22,7 +22,7 @@ class PromptComparator:
     """
     def __init__(self, model: str = "gpt-4o"):
         self.model = model
-        api_key = os.environ.get("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")
+        api_key = os.environ.get("OPENAI_API_KEY")
 
         self.client = openai.OpenAI(api_key=api_key)
         
