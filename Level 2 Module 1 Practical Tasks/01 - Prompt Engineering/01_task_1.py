@@ -11,6 +11,10 @@ from typing import List, Dict, Any
 import openai
 import tiktoken
 from tabulate import tabulate
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 COST_PER_1M_INPUT = 2.50
 COST_PER_1M_OUTPUT = 10.00
@@ -20,12 +24,12 @@ class PromptComparator:
     Executes a user query against 4 distinct prompt engineering strategies,
     calculates exact costs, captures user quality feedback, and saves metrics to JSON.
     """
-    def __init__(self, model: str = "gpt-4o"):
+    def __init__(self, model: str = "mistralai/mistral-large"):
         self.model = model
-        api_key = os.environ.get("OPENAI_API_KEY")
+        api_key= os.environ.get("MISTRAL_API_KEY")
 
-        self.client = openai.OpenAI(api_key=api_key)
-        
+        self.client = openai.OpenAI(api_key=api_key, base_url="https://openrouter.ai/api/v1")
+
         try:
             self.encoder = tiktoken.encoding_for_model(self.model)
         except KeyError:
@@ -110,7 +114,7 @@ class PromptComparator:
             },
             {"role": "user", "content": question}
         ]
-        results.append(self._execute_strategy("Persona-Based (Expert)", persona_msgs, temperature=0.7))
+        results.append(self._execute_strategy("Persona-Based", persona_msgs, temperature=0.7))
 
         return results
 

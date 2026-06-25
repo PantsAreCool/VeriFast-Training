@@ -1,0 +1,15 @@
+AI Analysis Report
+Model Used: gpt-4o
+Total Latency: 0.21 ms
+----------------------------------------
+
+1. Sentiment Analysis
+Sentiment: SentimentType.NEUTRAL
+Confidence: 0.85
+
+2. Entity Extraction
+Total Found: 2
+
+3. Classification
+Category: technology
+Confidence: 0.78

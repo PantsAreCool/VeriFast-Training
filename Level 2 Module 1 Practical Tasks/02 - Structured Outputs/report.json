@@ -1,0 +1,46 @@
+{
+  "model_used": "gpt-4o",
+  "total_latency_ms": 0.21,
+  "sentiment_analysis": {
+    "text_snippet": "Google announced new quantum computing hardware at their headquarters in California. The presentatio",
+    "sentiment": "neutral",
+    "confidence": 0.85,
+    "positive_aspects": [],
+    "negative_aspects": [],
+    "reasoning": "Based on keyword analysis, sentiment appears neutral."
+  },
+  "entity_extraction": {
+    "entities": [
+      {
+        "text": "Example Corp",
+        "type": "organization",
+        "start_position": null,
+        "confidence": 0.9,
+        "description": "A company"
+      },
+      {
+        "text": "New York",
+        "type": "location",
+        "start_position": null,
+        "confidence": 0.95,
+        "description": "A city"
+      }
+    ],
+    "total_count": 2,
+    "entity_types_found": [
+      "organization",
+      "location"
+    ]
+  },
+  "classification": {
+    "primary_category": "technology",
+    "subcategories": [
+      "software"
+    ],
+    "confidence": 0.78,
+    "alternative_categories": [
+      "science"
+    ],
+    "reasoning": "Text discusses technology topics."
+  }
+}
