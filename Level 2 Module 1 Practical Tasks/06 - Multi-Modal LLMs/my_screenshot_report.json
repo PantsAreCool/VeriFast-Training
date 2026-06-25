@@ -1,0 +1,55 @@
+{
+    "detected_type": "code",
+    "extracted_text": [
+        {
+            "text": "if __name__ == '__main__':",
+            "position": "top-left"
+        },
+        {
+            "text": "api_key=os.environ.get('MISTRAL_API_KEY')",
+            "position": "middle-left"
+        },
+        {
+            "text": "analyzer = ScreenshotAnalyzer()",
+            "position": "middle-left"
+        },
+        {
+            "text": "try:",
+            "position": "middle-left"
+        },
+        {
+            "text": "sample_screenshot = 'screenshot.png'",
+            "position": "middle-left"
+        },
+        {
+            "text": "if os.path.exists(sample_screenshot):",
+            "position": "middle-left"
+        },
+        {
+            "text": "report = analyzer.analyze_screenshot(sample_screenshot, \"my_screenshot_report.json\")",
+            "position": "middle-left"
+        },
+        {
+            "text": "print(json.dumps(report, indent=2))",
+            "position": "middle-left"
+        },
+        {
+            "text": "else:",
+            "position": "middle-left"
+        },
+        {
+            "text": "print(f\"Please place a real screenshot at '{sample_screenshot}' to test the script.\")",
+            "position": "middle-left"
+        },
+        {
+            "text": "except Exception as e:",
+            "position": "bottom-left"
+        },
+        {
+            "text": "print(f\"An error occurred: {e}\")",
+            "position": "bottom-left"
+        }
+    ],
+    "ui_elements": [],
+    "accessibility_alt_text": "Screenshot of Python code initiating a script. It checks for '__main__', retrieves an API key from environment variables, and uses a ScreenshotAnalyzer to analyze 'screenshot.png'. Outputs results in JSON format, handling missing files and exceptions."
+}
