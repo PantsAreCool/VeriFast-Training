@@ -87,17 +87,16 @@ class PDFProcessingPipeline:
         final_summary = summary_response.choices[0].message.content
         total_time = time.time() - start_time
 
-        print("\n" + "="*50)
         print("FINAL PIPELINE REPORT")
-        print("="*50)
+        print("-"*40)
         print(f"Total Processing Time: {total_time:.2f} seconds")
         print("\nPer-Page Breakdown:")
         for stat in pipeline_stats:
             print(f" - Page {stat['page']}: {stat['type']:<10} (Latency: {stat['latency_ms']:.0f}ms)")
         
-        print("\nConsolidated Document Summary:")
+        print("\nDocument Summary:")
         print(final_summary)
-        print("="*50)
+        print("-"*40)
 
 if __name__ == "__main__":
     pipeline = PDFProcessingPipeline()
