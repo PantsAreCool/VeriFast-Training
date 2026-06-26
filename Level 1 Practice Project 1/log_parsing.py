@@ -1,3 +1,7 @@
+'''
+run via python log_parsing.py --config "input json file"
+'''
+
 import json
 import re
 import argparse
