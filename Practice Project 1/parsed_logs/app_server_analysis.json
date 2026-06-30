@@ -1,0 +1,46 @@
+{
+  "analyzed_at": "2026-06-30T15:18:01.254334",
+  "time_window_size_minutes": 5,
+  "detected_spikes": [
+    {
+      "window": "2026-05-20 08:15",
+      "error_count": 3,
+      "severity": "WARNING",
+      "description": "Error count (3) significantly exceeded baseline threshold (2.86)"
+    }
+  ],
+  "cascading_failures": [],
+  "correlations": {
+    "error_peak_windows": [
+      [
+        "2026-05-20 08:15",
+        3
+      ],
+      [
+        "2026-05-20 08:05",
+        2
+      ],
+      [
+        "2026-05-20 08:20",
+        1
+      ]
+    ],
+    "warning_peak_windows": [
+      [
+        "2026-05-20 08:00",
+        1
+      ],
+      [
+        "2026-05-20 08:10",
+        1
+      ],
+      [
+        "2026-05-20 08:25",
+        1
+      ]
+    ]
+  },
+  "actionable_recommendations": [
+    "Action Required: Review autoscaling policies or rate-limiting filters during spike windows."
+  ]
+}

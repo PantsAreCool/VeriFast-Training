@@ -1,0 +1,178 @@
+{
+  "filename": "database.log",
+  "parsed_at": "2026-06-30T15:18:01.247904",
+  "statistics": {
+    "total_lines": 33,
+    "info_count": 17,
+    "warn_count": 8,
+    "error_count": 8
+  },
+  "errors": [
+    {
+      "timestamp": "2026-05-20 08:08:30",
+      "message": "Deadlock detected: transaction_4521 and transaction_4522 competing for orders table",
+      "details": {
+        "raw": "Deadlock detected: transaction_4521 and transaction_4522 competing for orders table"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:15:00",
+      "message": "Replication lag: standby-1 is 45 seconds behind primary",
+      "details": {
+        "raw": "Replication lag: standby-1 is 45 seconds behind primary"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:18:00",
+      "message": "Constraint violation: UNIQUE constraint failed on users.email for value='admin@example.com'",
+      "details": {
+        "raw": "Constraint violation: UNIQUE constraint failed on users.email for value='admin@example.com'"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:25:00",
+      "message": "Connection refused: max_connections reached (50/50), new connections being rejected",
+      "details": {
+        "raw": "Connection refused: max_connections reached (50/50), new connections being rejected"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:25:05",
+      "message": "Connection refused: max_connections reached (50/50), new connections being rejected",
+      "details": {
+        "raw": "Connection refused: max_connections reached (50/50), new connections being rejected"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:25:10",
+      "message": "Connection refused: max_connections reached (50/50), new connections being rejected",
+      "details": {
+        "raw": "Connection refused: max_connections reached (50/50), new connections being rejected"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:37:00",
+      "message": "Foreign key violation: INSERT order_items (order_id=9999) references non-existent orders.id",
+      "details": {
+        "raw": "Foreign key violation: INSERT order_items (order_id=9999) references non-existent orders.id",
+        "entity_id": "9999"
+      }
+    },
+    {
+      "timestamp": "2026-05-20 08:48:00",
+      "message": "Replication lag: standby-2 is 120 seconds behind primary",
+      "details": {
+        "raw": "Replication lag: standby-2 is 120 seconds behind primary",
+        "error_code": "120"
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "timestamp": "2026-05-20 08:03:00",
+      "message": "Slow query: UPDATE orders SET status='processing' WHERE id IN (...), duration=1200ms"
+    },
+    {
+      "timestamp": "2026-05-20 08:07:00",
+      "message": "Connection pool: active=35, idle=5, waiting=8"
+    },
+    {
+      "timestamp": "2026-05-20 08:12:00",
+      "message": "Table bloat detected: orders table is 45% bloat, recommend VACUUM FULL"
+    },
+    {
+      "timestamp": "2026-05-20 08:15:30",
+      "message": "Replication lag: standby-1 is 30 seconds behind primary (recovering)"
+    },
+    {
+      "timestamp": "2026-05-20 08:22:00",
+      "message": "Sequential scan on products table: 500000 rows scanned, consider adding index"
+    },
+    {
+      "timestamp": "2026-05-20 08:35:00",
+      "message": "WAL archive lag: 15 WAL files pending archival"
+    },
+    {
+      "timestamp": "2026-05-20 08:42:00",
+      "message": "Disk usage: /var/lib/postgresql at 78% (threshold: 80%)"
+    },
+    {
+      "timestamp": "2026-05-20 08:50:00",
+      "message": "Replication lag: standby-2 is 60 seconds behind primary (recovering)"
+    }
+  ],
+  "info": [
+    {
+      "timestamp": "2026-05-20 08:00:00",
+      "message": "PostgreSQL 16.2 started, database=production_db"
+    },
+    {
+      "timestamp": "2026-05-20 08:00:01",
+      "message": "Connection pool initialized: min=10, max=50"
+    },
+    {
+      "timestamp": "2026-05-20 08:01:00",
+      "message": "Active connections: 12, idle: 8, waiting: 0"
+    },
+    {
+      "timestamp": "2026-05-20 08:02:30",
+      "message": "Query executed: SELECT * FROM users WHERE id=1001, duration=5ms"
+    },
+    {
+      "timestamp": "2026-05-20 08:05:00",
+      "message": "Transaction completed: INSERT orders (id=5501), COMMIT"
+    },
+    {
+      "timestamp": "2026-05-20 08:08:31",
+      "message": "Deadlock resolved: transaction_4522 retried successfully"
+    },
+    {
+      "timestamp": "2026-05-20 08:10:00",
+      "message": "Vacuum started on orders table"
+    },
+    {
+      "timestamp": "2026-05-20 08:16:00",
+      "message": "Replication lag resolved: standby-1 caught up"
+    },
+    {
+      "timestamp": "2026-05-20 08:20:00",
+      "message": "Index scan: idx_orders_status, tuples=15000, duration=8ms"
+    },
+    {
+      "timestamp": "2026-05-20 08:26:00",
+      "message": "Connection pool recovered: active=20, idle=15, waiting=0"
+    },
+    {
+      "timestamp": "2026-05-20 08:28:00",
+      "message": "Backup started: pg_dump production_db"
+    },
+    {
+      "timestamp": "2026-05-20 08:32:00",
+      "message": "Backup completed: 2.3GB in 240s, stored at /backups/prod_20260520.dump"
+    },
+    {
+      "timestamp": "2026-05-20 08:40:00",
+      "message": "Statistics gathered for query planner"
+    },
+    {
+      "timestamp": "2026-05-20 08:45:00",
+      "message": "Auto-vacuum completed on sessions table: 5000 dead tuples removed"
+    },
+    {
+      "timestamp": "2026-05-20 08:52:00",
+      "message": "Replication lag resolved: standby-2 caught up"
+    },
+    {
+      "timestamp": "2026-05-20 08:55:00",
+      "message": "Database stats: queries=45600, slow_queries=12, errors=8"
+    },
+    {
+      "timestamp": "2026-05-20 09:00:00",
+      "message": "Checkpoint completed: 234 buffers written"
+    }
+  ],
+  "error_summary": {
+    "Unknown Error": 7,
+    "120": 1
+  }
+}

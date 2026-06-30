@@ -1,0 +1,63 @@
+{
+  "analyzed_at": "2026-06-30T15:18:01.253252",
+  "time_window_size_minutes": 5,
+  "detected_spikes": [],
+  "cascading_failures": [
+    {
+      "trigger_window": "2026-05-20 08:20",
+      "consequent_window": "2026-05-20 08:30",
+      "initial_failing_services": [
+        "user-service"
+      ],
+      "subsequent_failing_services": [
+        "analytics-service"
+      ],
+      "description": "Potential cascading failure: Outage shifted from {'user-service'} to {'analytics-service'}"
+    },
+    {
+      "trigger_window": "2026-05-20 08:30",
+      "consequent_window": "2026-05-20 08:45",
+      "initial_failing_services": [
+        "analytics-service"
+      ],
+      "subsequent_failing_services": [
+        "notification-service"
+      ],
+      "description": "Potential cascading failure: Outage shifted from {'analytics-service'} to {'notification-service'}"
+    }
+  ],
+  "correlations": {
+    "error_peak_windows": [
+      [
+        "2026-05-20 08:10",
+        3
+      ],
+      [
+        "2026-05-20 08:05",
+        2
+      ],
+      [
+        "2026-05-20 08:00",
+        1
+      ]
+    ],
+    "warning_peak_windows": [
+      [
+        "2026-05-20 08:00",
+        1
+      ],
+      [
+        "2026-05-20 08:10",
+        1
+      ],
+      [
+        "2026-05-20 08:15",
+        1
+      ]
+    ]
+  },
+  "actionable_recommendations": [
+    "Action Required: Circuit breaker design pattern missing. Implement fallback tolerances between interdependent upstream services.",
+    "Security Advisory: Elevated authentication/authorization errors detected. Check credential rotators or potential brute-force vectors."
+  ]
+}
