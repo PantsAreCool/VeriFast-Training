@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 class ResearchPipeline:
     def __init__(self, model: str = "mistralai/mistral-large"):
         self.model = model
-        api_key= os.environ.get("MISTRAL_API_KEY")
+        api_key= os.environ.get("OPENROUTER_API_KEY")
 
         self.client = openai.OpenAI(api_key=api_key, base_url="https://openrouter.ai/api/v1")
 
@@ -67,9 +67,9 @@ class ResearchPipeline:
 
 # --- Execution Demo ---
 if __name__ == "__main__":
-    # Ensure API key is configured before testing: export MISTRAL_API_KEY="your-key"
-   # if not os.environ.get("MISTRAL_API_KEY"):
-   #     print("Please set your MISTRAL_API_KEY environment variable to test the script.")
+    # Ensure API key is configured before testing: export OPENROUTER_API_KEY="your-key"
+   # if not os.environ.get("OPENROUTER_API_KEY"):
+   #     print("Please set your OPENROUTER_API_KEY environment variable to test the script.")
    # else:
     pipeline = ResearchPipeline()
     report = pipeline.execute("The impact of quantum computing on modern RSA cryptography paradigms")

@@ -16,7 +16,7 @@ load_dotenv()
 
 class ScreenshotAnalyzer:    
     def __init__(self):
-        api_key=os.environ.get("MISTRAL_API_KEY")
+        api_key=os.environ.get("OPENROUTER_API_KEY")
         self.client = OpenAI(api_key=api_key, base_url="https://openrouter.ai/api/v1")
 
     def _encode_image(self, image_path: str) -> str:
@@ -80,7 +80,7 @@ class ScreenshotAnalyzer:
 
 if __name__ == "__main__":
 
-    api_key=os.environ.get("MISTRAL_API_KEY")
+    api_key=os.environ.get("OPENROUTER_API_KEY")
     analyzer = ScreenshotAnalyzer()
     
     try:

@@ -25,8 +25,8 @@ def keyword_router(query: str) -> str:
 
 
 def get_llm_decision(query: str, tools: list) -> str:
-    # Expects MISTRAL_API_KEY environment variable to be set
-    api_key= os.environ.get("MISTRAL_API_KEY")
+    # Expects OPENROUTER_API_KEY environment variable to be set
+    api_key= os.environ.get("OPENROUTER_API_KEY")
     client = openai.OpenAI(api_key=api_key, base_url="https://openrouter.ai/api/v1")
     response = client.chat.completions.create(
         model="mistralai/mistral-large",

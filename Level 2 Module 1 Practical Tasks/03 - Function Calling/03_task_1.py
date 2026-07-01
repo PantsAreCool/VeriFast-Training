@@ -111,8 +111,8 @@ available_functions = {
     "escalate_to_human": escalate_to_human,
 }
 
-# Expects MISTRAL_API_KEY environment variable to be set
-api_key= os.environ.get("MISTRAL_API_KEY")
+# Expects OPENROUTER_API_KEY environment variable to be set
+api_key= os.environ.get("OPENROUTER_API_KEY")
 client = openai.OpenAI(api_key=api_key, base_url="https://openrouter.ai/api/v1")
 
 def run_customer_agent(user_prompt, conversation_history=[]):

@@ -26,7 +26,7 @@ class PromptComparator:
     """
     def __init__(self, model: str = "mistralai/mistral-large"):
         self.model = model
-        api_key= os.environ.get("MISTRAL_API_KEY")
+        api_key= os.environ.get("OPENROUTER_API_KEY")
 
         self.client = openai.OpenAI(api_key=api_key, base_url="https://openrouter.ai/api/v1")
 
