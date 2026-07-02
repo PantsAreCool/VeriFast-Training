@@ -9,9 +9,21 @@ class ErrorExtractor:
         """Extract information from error messages"""
         error_info = {"raw": message}
         
-        code_match = re.search(r'\b(\d{3})\b', message)
-        if code_match:
-            error_info["error_code"] = code_match.group(1)
+        db_keywords = [
+            r'(Deadlock detected)', 
+            r'(Connection refused|Connection timeout)', 
+            r'(Constraint violation|Unique constraint)',
+            r'(Replication lag|Replication error)',
+            r'(Disk full|Out of memory)'
+        ]
+        
+        db_match = re.search('|'.join(db_keywords), message, re.IGNORECASE)
+        if db_match:
+            error_info["error_code"] = db_match.group(0).title()
+        else:
+            code_match = re.search(r'\b(\d{3})\b', message)
+            if code_match:
+                error_info["error_code"] = code_match.group(1)
         
         service_match = re.search(r'(upstream|service)=([a-z0-9\-]+)', message)
         if service_match:
@@ -28,5 +40,7 @@ class ErrorExtractor:
         exception_match = re.search(r'(\w+Error|Exception):', message)
         if exception_match:
             error_info["exception_type"] = exception_match.group(1)
+            if "error_code" not in error_info:
+                error_info["error_code"] = exception_match.group(1)
         
         return error_info

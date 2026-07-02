@@ -1,203 +1,230 @@
 {
-  "filename": "api_gateway.log",
-  "parsed_at": "2026-07-01T11:36:40.028395",
-  "statistics": {
+    "filename": "api_gateway.log",
     "total_lines": 32,
-    "info_count": 17,
-    "warn_count": 6,
-    "error_count": 9
-  },
-  "errors": [
-    {
-      "timestamp": "2026-05-20 08:04:45",
-      "message": "429 Too Many Requests: client_id=APP-003, requests=1050, limit=1000",
-      "details": {
-        "raw": "429 Too Many Requests: client_id=APP-003, requests=1050, limit=1000",
-        "error_code": "429",
-        "entity_id": "APP-003"
-      }
+    "levels": {
+        "INFO": 17,
+        "WARN": 6,
+        "ERROR": 9
     },
-    {
-      "timestamp": "2026-05-20 08:06:30",
-      "message": "503 Service Unavailable: upstream=payment-service, reason=connection_refused",
-      "details": {
-        "raw": "503 Service Unavailable: upstream=payment-service, reason=connection_refused",
-        "error_code": "503",
-        "service": "payment-service",
-        "reason": "connection_refused"
-      }
+    "errors": {
+        "429": 1,
+        "503": 2,
+        "401": 3,
+        "502": 1,
+        "504": 1,
+        "500": 1
     },
-    {
-      "timestamp": "2026-05-20 08:06:32",
-      "message": "503 Service Unavailable: upstream=payment-service, reason=connection_refused",
-      "details": {
-        "raw": "503 Service Unavailable: upstream=payment-service, reason=connection_refused",
-        "error_code": "503",
-        "service": "payment-service",
-        "reason": "connection_refused"
-      }
-    },
-    {
-      "timestamp": "2026-05-20 08:14:30",
-      "message": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
-      "details": {
-        "raw": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
-        "error_code": "401",
-        "entity_id": "APP-004",
-        "reason": "expired_jwt_token"
-      }
-    },
-    {
-      "timestamp": "2026-05-20 08:14:31",
-      "message": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
-      "details": {
-        "raw": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
-        "error_code": "401",
-        "entity_id": "APP-004",
-        "reason": "expired_jwt_token"
-      }
-    },
-    {
-      "timestamp": "2026-05-20 08:14:32",
-      "message": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
-      "details": {
-        "raw": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
-        "error_code": "401",
-        "entity_id": "APP-004",
-        "reason": "expired_jwt_token"
-      }
-    },
-    {
-      "timestamp": "2026-05-20 08:20:00",
-      "message": "502 Bad Gateway: upstream=user-service, reason=empty_response",
-      "details": {
-        "raw": "502 Bad Gateway: upstream=user-service, reason=empty_response",
-        "error_code": "502",
-        "service": "user-service",
-        "reason": "empty_response"
-      }
-    },
-    {
-      "timestamp": "2026-05-20 08:30:00",
-      "message": "504 Gateway Timeout: upstream=analytics-service, timeout=30000ms",
-      "details": {
-        "raw": "504 Gateway Timeout: upstream=analytics-service, timeout=30000ms",
-        "error_code": "504",
-        "service": "analytics-service"
-      }
-    },
-    {
-      "timestamp": "2026-05-20 08:45:00",
-      "message": "500 Internal Server Error: upstream=notification-service, error=KafkaProducerError",
-      "details": {
-        "raw": "500 Internal Server Error: upstream=notification-service, error=KafkaProducerError",
-        "error_code": "500",
-        "service": "notification-service"
-      }
-    }
-  ],
-  "warnings": [
-    {
-      "timestamp": "2026-05-20 08:03:30",
-      "message": "Rate limit warning: client_id=APP-003 approaching limit (850/1000)"
-    },
-    {
-      "timestamp": "2026-05-20 08:10:15",
-      "message": "Slow response: upstream=order-service, latency=3200ms, threshold=3000ms"
-    },
-    {
-      "timestamp": "2026-05-20 08:18:45",
-      "message": "CORS warning: origin=http://unknown-site.com blocked"
-    },
-    {
-      "timestamp": "2026-05-20 08:25:00",
-      "message": "High error rate: 5.2% in last 5 minutes (threshold: 5%)"
-    },
-    {
-      "timestamp": "2026-05-20 08:35:00",
-      "message": "Payload size warning: request body 9.8MB, limit=10MB"
-    },
-    {
-      "timestamp": "2026-05-20 08:55:00",
-      "message": "Rate limit warning: client_id=APP-001 approaching limit (880/1000)"
-    }
-  ],
-  "info": [
-    {
-      "timestamp": "2026-05-20 08:00:01",
-      "message": "API Gateway started, routes loaded: 45"
-    },
-    {
-      "timestamp": "2026-05-20 08:00:05",
-      "message": "Rate limiter configured: 1000 req/min per client"
-    },
-    {
-      "timestamp": "2026-05-20 08:01:00",
-      "message": "Incoming request: client_id=APP-001, method=GET, path=/api/v1/users, status=200, latency=50ms"
-    },
-    {
-      "timestamp": "2026-05-20 08:02:15",
-      "message": "Incoming request: client_id=APP-002, method=POST, path=/api/v1/orders, status=201, latency=130ms"
-    },
-    {
-      "timestamp": "2026-05-20 08:05:00",
-      "message": "Rate limit reset for client_id=APP-003"
-    },
-    {
-      "timestamp": "2026-05-20 08:06:34",
-      "message": "Payment service recovered, health check passed"
-    },
-    {
-      "timestamp": "2026-05-20 08:08:00",
-      "message": "Incoming request: client_id=APP-001, method=GET, path=/api/v1/products, status=200, latency=35ms"
-    },
-    {
-      "timestamp": "2026-05-20 08:12:00",
-      "message": "TLS handshake completed: api.example.com"
-    },
-    {
-      "timestamp": "2026-05-20 08:16:00",
-      "message": "Incoming request: client_id=APP-002, method=PUT, path=/api/v1/orders/5501, status=200, latency=95ms"
-    },
-    {
-      "timestamp": "2026-05-20 08:20:02",
-      "message": "User service recovered via health check"
-    },
-    {
-      "timestamp": "2026-05-20 08:22:00",
-      "message": "Load balancer: routing to server-2 (server-1 health check failed)"
-    },
-    {
-      "timestamp": "2026-05-20 08:28:00",
-      "message": "Incoming request: client_id=APP-001, method=GET, path=/api/v1/analytics, status=200, latency=210ms"
-    },
-    {
-      "timestamp": "2026-05-20 08:32:00",
-      "message": "Analytics service scaled up: instances 2 -> 4"
-    },
-    {
-      "timestamp": "2026-05-20 08:40:00",
-      "message": "API Gateway stats: total_requests=8900, errors=142, avg_latency=78ms"
-    },
-    {
-      "timestamp": "2026-05-20 08:47:00",
-      "message": "Notification service restarted, health check passed"
-    },
-    {
-      "timestamp": "2026-05-20 08:50:00",
-      "message": "Incoming request: client_id=APP-003, method=GET, path=/api/v1/reports, status=200, latency=180ms"
-    },
-    {
-      "timestamp": "2026-05-20 09:00:00",
-      "message": "API Gateway stats: total_requests=9500, errors=150, avg_latency=82ms"
-    }
-  ],
-  "error_summary": {
-    "429": 1,
-    "503": 2,
-    "401": 3,
-    "502": 1,
-    "504": 1,
-    "500": 1
-  }
+    "entries": [
+        {
+            "timestamp": "2026-05-20 08:00:01",
+            "level": "INFO",
+            "message": "API Gateway started, routes loaded: 45"
+        },
+        {
+            "timestamp": "2026-05-20 08:00:05",
+            "level": "INFO",
+            "message": "Rate limiter configured: 1000 req/min per client"
+        },
+        {
+            "timestamp": "2026-05-20 08:01:00",
+            "level": "INFO",
+            "message": "Incoming request: client_id=APP-001, method=GET, path=/api/v1/users, status=200, latency=50ms"
+        },
+        {
+            "timestamp": "2026-05-20 08:02:15",
+            "level": "INFO",
+            "message": "Incoming request: client_id=APP-002, method=POST, path=/api/v1/orders, status=201, latency=130ms"
+        },
+        {
+            "timestamp": "2026-05-20 08:03:30",
+            "level": "WARN",
+            "message": "Rate limit warning: client_id=APP-003 approaching limit (850/1000)"
+        },
+        {
+            "timestamp": "2026-05-20 08:04:45",
+            "level": "ERROR",
+            "message": "429 Too Many Requests: client_id=APP-003, requests=1050, limit=1000",
+            "error_details": {
+                "raw": "429 Too Many Requests: client_id=APP-003, requests=1050, limit=1000",
+                "error_code": "429",
+                "entity_id": "APP-003"
+            }
+        },
+        {
+            "timestamp": "2026-05-20 08:05:00",
+            "level": "INFO",
+            "message": "Rate limit reset for client_id=APP-003"
+        },
+        {
+            "timestamp": "2026-05-20 08:06:30",
+            "level": "ERROR",
+            "message": "503 Service Unavailable: upstream=payment-service, reason=connection_refused",
+            "error_details": {
+                "raw": "503 Service Unavailable: upstream=payment-service, reason=connection_refused",
+                "error_code": "503",
+                "service": "payment-service",
+                "reason": "connection_refused"
+            }
+        },
+        {
+            "timestamp": "2026-05-20 08:06:32",
+            "level": "ERROR",
+            "message": "503 Service Unavailable: upstream=payment-service, reason=connection_refused",
+            "error_details": {
+                "raw": "503 Service Unavailable: upstream=payment-service, reason=connection_refused",
+                "error_code": "503",
+                "service": "payment-service",
+                "reason": "connection_refused"
+            }
+        },
+        {
+            "timestamp": "2026-05-20 08:06:34",
+            "level": "INFO",
+            "message": "Payment service recovered, health check passed"
+        },
+        {
+            "timestamp": "2026-05-20 08:08:00",
+            "level": "INFO",
+            "message": "Incoming request: client_id=APP-001, method=GET, path=/api/v1/products, status=200, latency=35ms"
+        },
+        {
+            "timestamp": "2026-05-20 08:10:15",
+            "level": "WARN",
+            "message": "Slow response: upstream=order-service, latency=3200ms, threshold=3000ms"
+        },
+        {
+            "timestamp": "2026-05-20 08:12:00",
+            "level": "INFO",
+            "message": "TLS handshake completed: api.example.com"
+        },
+        {
+            "timestamp": "2026-05-20 08:14:30",
+            "level": "ERROR",
+            "message": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
+            "error_details": {
+                "raw": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
+                "error_code": "401",
+                "entity_id": "APP-004",
+                "reason": "expired_jwt_token"
+            }
+        },
+        {
+            "timestamp": "2026-05-20 08:14:31",
+            "level": "ERROR",
+            "message": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
+            "error_details": {
+                "raw": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
+                "error_code": "401",
+                "entity_id": "APP-004",
+                "reason": "expired_jwt_token"
+            }
+        },
+        {
+            "timestamp": "2026-05-20 08:14:32",
+            "level": "ERROR",
+            "message": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
+            "error_details": {
+                "raw": "401 Unauthorized: client_id=APP-004, reason=expired_jwt_token",
+                "error_code": "401",
+                "entity_id": "APP-004",
+                "reason": "expired_jwt_token"
+            }
+        },
+        {
+            "timestamp": "2026-05-20 08:16:00",
+            "level": "INFO",
+            "message": "Incoming request: client_id=APP-002, method=PUT, path=/api/v1/orders/5501, status=200, latency=95ms"
+        },
+        {
+            "timestamp": "2026-05-20 08:18:45",
+            "level": "WARN",
+            "message": "CORS warning: origin=http://unknown-site.com blocked"
+        },
+        {
+            "timestamp": "2026-05-20 08:20:00",
+            "level": "ERROR",
+            "message": "502 Bad Gateway: upstream=user-service, reason=empty_response",
+            "error_details": {
+                "raw": "502 Bad Gateway: upstream=user-service, reason=empty_response",
+                "error_code": "502",
+                "service": "user-service",
+                "reason": "empty_response"
+            }
+        },
+        {
+            "timestamp": "2026-05-20 08:20:02",
+            "level": "INFO",
+            "message": "User service recovered via health check"
+        },
+        {
+            "timestamp": "2026-05-20 08:22:00",
+            "level": "INFO",
+            "message": "Load balancer: routing to server-2 (server-1 health check failed)"
+        },
+        {
+            "timestamp": "2026-05-20 08:25:00",
+            "level": "WARN",
+            "message": "High error rate: 5.2% in last 5 minutes (threshold: 5%)"
+        },
+        {
+            "timestamp": "2026-05-20 08:28:00",
+            "level": "INFO",
+            "message": "Incoming request: client_id=APP-001, method=GET, path=/api/v1/analytics, status=200, latency=210ms"
+        },
+        {
+            "timestamp": "2026-05-20 08:30:00",
+            "level": "ERROR",
+            "message": "504 Gateway Timeout: upstream=analytics-service, timeout=30000ms",
+            "error_details": {
+                "raw": "504 Gateway Timeout: upstream=analytics-service, timeout=30000ms",
+                "error_code": "504",
+                "service": "analytics-service"
+            }
+        },
+        {
+            "timestamp": "2026-05-20 08:32:00",
+            "level": "INFO",
+            "message": "Analytics service scaled up: instances 2 -> 4"
+        },
+        {
+            "timestamp": "2026-05-20 08:35:00",
+            "level": "WARN",
+            "message": "Payload size warning: request body 9.8MB, limit=10MB"
+        },
+        {
+            "timestamp": "2026-05-20 08:40:00",
+            "level": "INFO",
+            "message": "API Gateway stats: total_requests=8900, errors=142, avg_latency=78ms"
+        },
+        {
+            "timestamp": "2026-05-20 08:45:00",
+            "level": "ERROR",
+            "message": "500 Internal Server Error: upstream=notification-service, error=KafkaProducerError",
+            "error_details": {
+                "raw": "500 Internal Server Error: upstream=notification-service, error=KafkaProducerError",
+                "error_code": "500",
+                "service": "notification-service"
+            }
+        },
+        {
+            "timestamp": "2026-05-20 08:47:00",
+            "level": "INFO",
+            "message": "Notification service restarted, health check passed"
+        },
+        {
+            "timestamp": "2026-05-20 08:50:00",
+            "level": "INFO",
+            "message": "Incoming request: client_id=APP-003, method=GET, path=/api/v1/reports, status=200, latency=180ms"
+        },
+        {
+            "timestamp": "2026-05-20 08:55:00",
+            "level": "WARN",
+            "message": "Rate limit warning: client_id=APP-001 approaching limit (880/1000)"
+        },
+        {
+            "timestamp": "2026-05-20 09:00:00",
+            "level": "INFO",
+            "message": "API Gateway stats: total_requests=9500, errors=150, avg_latency=82ms"
+        }
+    ]
 }

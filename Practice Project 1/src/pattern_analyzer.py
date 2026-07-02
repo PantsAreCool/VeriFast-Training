@@ -24,11 +24,17 @@ class PatternAnalyzer:
         warning_windows = defaultdict(int)
         service_failures = defaultdict(lambda: defaultdict(int))
 
-        for err in parsed_data.get("errors", []):
-            win = self._get_window_key(err["timestamp"])
-            error_windows[win] += 1            
-            service = err.get("details", {}).get("service", "unknown")
-            service_failures[win][service] += 1
+        for entry in parsed_data.get("entries", []):
+            level = entry.get("level")
+            win = self._get_window_key(entry["timestamp"])
+            
+            if level == "ERROR":
+                error_windows[win] += 1            
+                service = entry.get("error_details", {}).get("service", "database")
+                service_failures[win][service] += 1
+                
+            elif level == "WARN":
+                warning_windows[win] += 1
 
         for warn in parsed_data.get("warnings", []):
             win = self._get_window_key(warn["timestamp"])

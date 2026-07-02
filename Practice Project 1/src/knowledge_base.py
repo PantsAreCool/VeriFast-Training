@@ -22,9 +22,7 @@ class KnowledgeBase:
         return [w for w in words if w not in self.stopwords]
 
     def add_document(self, text: str, metadata: Optional[Dict[str, Any]] = None) -> int:
-        """
-        Creates and stores a document from log analysis data.
-        """
+        """Creates and stores a document from log analysis data."""
         doc_id = self.next_id
         self.documents[doc_id] = {
             "id": doc_id,
@@ -36,9 +34,7 @@ class KnowledgeBase:
         return doc_id
 
     def search(self, query: str, limit: int = 3) -> List[Dict[str, Any]]:
-        """
-        keyword-based search with relevance score.
-        """
+        """keyword-based search with relevance score."""
         query_tokens = set(self._tokenize(query))
         if not query_tokens:
             return []
@@ -56,20 +52,14 @@ class KnowledgeBase:
                 if doc["metadata"].get("level") in ["ERROR", "CRITICAL", "FATAL"]:
                     score *= 1.2
 
-                scored_results.append({
-                    "doc": doc,
-                    "score": round(score, 4)
-                })
+                scored_results.append({"doc": doc, "score": round(score, 4)})
 
         scored_results.sort(key=lambda x: x["score"], reverse=True)
         
         return scored_results[:limit]
 
     def build_llm_context(self, query: str, limit: int = 2) -> str:
-        """
-        Retrieves top matches and compiles them into a clean text block 
-        ready for direct injection into an LLM prompt.
-        """
+        """Retrieves top matches and compiles them into a clean text block ready for direct injection into an LLM prompt."""
         results = self.search(query, limit=limit)
         
         if not results:

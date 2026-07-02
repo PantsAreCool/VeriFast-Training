@@ -1,63 +1,96 @@
 {
-  "analyzed_at": "2026-07-01T11:36:40.043513",
-  "time_window_size_minutes": 5,
-  "detected_spikes": [],
-  "cascading_failures": [
-    {
-      "trigger_window": "2026-05-20 08:20",
-      "consequent_window": "2026-05-20 08:30",
-      "initial_failing_services": [
-        "user-service"
-      ],
-      "subsequent_failing_services": [
-        "analytics-service"
-      ],
-      "description": "Potential cascading failure: Outage shifted from {'user-service'} to {'analytics-service'}"
-    },
-    {
-      "trigger_window": "2026-05-20 08:30",
-      "consequent_window": "2026-05-20 08:45",
-      "initial_failing_services": [
-        "analytics-service"
-      ],
-      "subsequent_failing_services": [
-        "notification-service"
-      ],
-      "description": "Potential cascading failure: Outage shifted from {'analytics-service'} to {'notification-service'}"
-    }
-  ],
-  "correlations": {
-    "error_peak_windows": [
-      [
-        "2026-05-20 08:10",
-        3
-      ],
-      [
-        "2026-05-20 08:05",
-        2
-      ],
-      [
-        "2026-05-20 08:00",
-        1
-      ]
+    "analyzed_at": "2026-07-02T16:45:02.922817",
+    "time_window_size_minutes": 5,
+    "detected_spikes": [],
+    "cascading_failures": [
+        {
+            "trigger_window": "2026-05-20 08:00",
+            "consequent_window": "2026-05-20 08:05",
+            "initial_failing_services": [
+                "database"
+            ],
+            "subsequent_failing_services": [
+                "payment-service"
+            ],
+            "description": "Potential cascading failure: Outage shifted from {'database'} to {'payment-service'}"
+        },
+        {
+            "trigger_window": "2026-05-20 08:05",
+            "consequent_window": "2026-05-20 08:10",
+            "initial_failing_services": [
+                "payment-service"
+            ],
+            "subsequent_failing_services": [
+                "database"
+            ],
+            "description": "Potential cascading failure: Outage shifted from {'payment-service'} to {'database'}"
+        },
+        {
+            "trigger_window": "2026-05-20 08:10",
+            "consequent_window": "2026-05-20 08:20",
+            "initial_failing_services": [
+                "database"
+            ],
+            "subsequent_failing_services": [
+                "user-service"
+            ],
+            "description": "Potential cascading failure: Outage shifted from {'database'} to {'user-service'}"
+        },
+        {
+            "trigger_window": "2026-05-20 08:20",
+            "consequent_window": "2026-05-20 08:30",
+            "initial_failing_services": [
+                "user-service"
+            ],
+            "subsequent_failing_services": [
+                "analytics-service"
+            ],
+            "description": "Potential cascading failure: Outage shifted from {'user-service'} to {'analytics-service'}"
+        },
+        {
+            "trigger_window": "2026-05-20 08:30",
+            "consequent_window": "2026-05-20 08:45",
+            "initial_failing_services": [
+                "analytics-service"
+            ],
+            "subsequent_failing_services": [
+                "notification-service"
+            ],
+            "description": "Potential cascading failure: Outage shifted from {'analytics-service'} to {'notification-service'}"
+        }
     ],
-    "warning_peak_windows": [
-      [
-        "2026-05-20 08:00",
-        1
-      ],
-      [
-        "2026-05-20 08:10",
-        1
-      ],
-      [
-        "2026-05-20 08:15",
-        1
-      ]
+    "correlations": {
+        "error_peak_windows": [
+            [
+                "2026-05-20 08:10",
+                3
+            ],
+            [
+                "2026-05-20 08:05",
+                2
+            ],
+            [
+                "2026-05-20 08:00",
+                1
+            ]
+        ],
+        "warning_peak_windows": [
+            [
+                "2026-05-20 08:00",
+                1
+            ],
+            [
+                "2026-05-20 08:10",
+                1
+            ],
+            [
+                "2026-05-20 08:15",
+                1
+            ]
+        ]
+    },
+    "actionable_recommendations": [
+        "Action Required: Circuit breaker design pattern missing. Implement fallback tolerances between interdependent upstream services.",
+        "Security Advisory: Elevated authentication/authorization errors detected. Check credential rotators or potential brute-force vectors."
     ]
-  },
-  "actionable_recommendations": [
-    "Action Required: Circuit breaker design pattern missing. Implement fallback tolerances between interdependent upstream services.",
-    "Security Advisory: Elevated authentication/authorization errors detected. Check credential rotators or potential brute-force vectors."
-  ]
 }
